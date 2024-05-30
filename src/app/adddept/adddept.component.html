@@ -1,0 +1,96 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 mt-5">
+            <div class="card ">
+              
+                        <h4 class="text-center mt-3">Add Department of Incharge</h4>
+                    
+                <form class="emp-form" #cropForm="ngForm">
+                    <div class="card-body">
+                        <div class="row">
+                          
+                        
+                            <div class="form-group py-2">
+                                <label>Enter Department Name:</label>
+                                <input name="areaname" class="form-control" [(ngModel)]="model.dname"
+                                   >
+                            </div>
+                            <div *ngIf="isName" class="clr">
+                                Enter Department Name
+                            </div>
+                            
+                            <div class="form-group py-2">
+                                <label>Enter Department Password:</label>
+                                <input name="areaname" class="form-control" [(ngModel)]="model.password"
+                                   >
+                            </div>
+                            <div *ngIf="isPassword" class="clr">
+                                Enter Password
+                            </div>
+                            
+                            <div class="form-group py-2">
+                                <label>Enter email:</label>
+                                <input name="areaname" class="form-control" [(ngModel)]="model.email"
+                                   >
+                            </div>
+                           
+                            <div class="form-group py-2">
+                                <label>Enter Department Phone Number:</label>
+                                <input name="areaname" class="form-control" [(ngModel)]="model.phone"
+                                    >
+                            </div>
+                            <div *ngIf="isPhone" class="clr">
+                                Enter Phone Number
+                            </div>
+                            <div class="form-group py-2">
+                                <label>Enter Department Address:</label>
+                                <input name="areaname" class="form-control" [(ngModel)]="model.address"
+                                   >
+                            </div>
+                            <div *ngIf="isAddress" class="clr">
+                                Enter Address
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="panel-row">
+                            <div class="form-group me-3">
+                                <button type="submit" class="btn btn-success mb-2 float-end"
+                                    (click)="OnSubmit()">Submit</button>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+   
+    <div class="col-lg-6 mt-5">
+       <div class="card bg-success">
+        <div class="card-header">
+            <h4 class="text-white text-center">Department Details</h4>
+        </div>
+       </div>
+        <table class="table table-striped table-hover bg-white shadow mt-3 text-black text-center">
+           <thead>
+            <tr>
+                <th>Department Name</th>
+                <th>Phone Number</th>
+                <th>Address</th>
+                <th>Action</th>
+            </tr>
+           </thead>
+          <tbody>
+            <tr *ngFor="let lst of slst">
+                <td>{{lst.dname}}</td>
+                <td>{{lst.phone}}</td>
+                <td>{{lst.address}}</td>
+                <td>
+                    <button class="btn btn-danger" (click)="deletedept(lst.did)">Delete</button>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+ </div>

@@ -1,0 +1,16 @@
+h3{
+    text-align: center;
+}
+.img1{
+    background-image: url("../../assets/images/bg4.jpg");
+    min-height: 100vh;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    margin-top: 0px;
+   
+}
+a{
+    color: rgb(231, 140, 20);
+}

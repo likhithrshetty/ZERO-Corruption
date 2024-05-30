@@ -1,0 +1,119 @@
+<div class="container mt-5">
+<div class="col-lg-10 offset-1">
+    <div class="card">
+        <div class="card-header bg-success text-white text-center">
+            <h4>Manage Corruption</h4>
+        </div>
+       </div>
+<div class="form-group mt-2 ">
+    <label>Select Department </label>
+    <select [(ngModel)]="current" class="form-control text-center" name="Usertype" (change)="get()">
+        <option *ngFor="let item of slst" [value]="item.did" class="form-control">
+            {{item.dname}}</option>
+    </select>
+</div>
+</div>
+
+<div *ngIf="isdept">
+<div class="col-lg-10 offset-1"><br>
+   <div class="card">
+    <div class="card-header bg-success text-white text-center">
+        <h4>Department Details</h4>
+    </div>
+   </div>
+    <table class="table table-striped table-hover bg-white shadow mt-3 text-black text-center">
+      <thead>
+        <tr>
+            <th>DId</th>
+            <th>Department Name</th>
+            <th>Phone Number</th>
+            <th>Address</th>
+            <th>View Corruption</th>
+            
+        </tr>
+      </thead>
+        <tbody>
+            <tr *ngFor="let lst of dslst">
+                <td>{{lst.did}}</td>
+                <td>{{lst.dname}}</td>
+                <td>{{lst.phone}}</td>
+                <td>{{lst.address}}</td>
+                <td><a class="btn btn-primary bg-primary" (click)="view(lst)">View</a></td>
+             
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+
+
+<div *ngIf="isFlag">
+    <div class="card col-lg-10 mt-5 offset-1">
+        <h4 class="text-center py-2">Corruption Details</h4>
+        <div class="card-body">
+            <table class="table table-striped table-hover bg-white shadow mt-3 text-black text-center">
+               <thead>
+                <tr>
+                    <th>CId</th>
+                    <th>Department Name</th>
+                    <th>Public Name</th>
+                    <th>Corruption Details</th>
+                    <th>File Details</th>
+                    <th>Status</th>
+                </tr>
+               </thead>
+               <tbody>
+                <tr *ngFor="let lst of clst">
+                    <td>{{lst.cid}}</td>
+                    <td>{{lst.department?.dname}}</td>
+                    <td>{{lst.user?.pname}}</td>
+                    <td>{{lst.description}}</td>
+                    <td>
+                        <a class="btn btn-secondary" href={{lst.file}} download>Downloade</a>
+                    </td>
+                    <td>{{lst.status}}</td>
+                </tr>
+               </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="isupdate">
+<div class=" card col-lg-10 offset-1 mt-5">
+<div class="card-body">
+    <div class="form-row">
+        <h3 class="text-center">Update Department Here</h3>
+        <div class="form-group">
+            <label>Enter Dept Name</label>
+            <input  class="form-control" name="Password"[(ngModel)]="model.DeptName" />
+        </div>
+        <div class="form-group">
+            <label>Enter Dept Phone Number</label>
+            <input  class="form-control" name="Password"[(ngModel)]="model.PhoneNo" />
+        </div>
+        <div class="form-group">
+            <label>Enter Dept Address</label>
+            <input class="form-control" name="Password"[(ngModel)]="model.Address" />
+        </div>
+    </div>
+    <div class="panel-footer">
+        <div class="form-row">
+            <div class="form-group ">
+                <button type="submit" class="btn btn-primary float-end mt-2" (click)="onUpdate()">
+                    Update
+                </button>
+
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <h2 class="csssuccess">{{errormessage}}</h2>
+        </div>
+    </div>
+
+
+</div>
+</div>
+</div>
+</div>

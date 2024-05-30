@@ -1,0 +1,33 @@
+
+
+<div class="container-fluid">
+            <div class="col-lg-10 offset-1">
+                <div class="card bg-success mt-5 ">
+                    <div class="card-header">
+                        <h4 class="text-white text-center">Check Status</h4>
+                    </div>
+                   </div>
+
+            <table class="table table-striped bg-white shadow mt-3 text-black text-center">
+              <thead>
+                <tr>
+                
+                    <th>Department Name</th>
+                    <th>Public Name</th>
+                    <th>Crime Date</th>
+                    <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let lst of slst">
+        
+                    <td>{{lst.department.dname}}</td>
+                    <td>{{lst.user.pname}}</td>
+                    <td>{{lst.date}}</td>
+                    <td>{{lst.status}}</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+   
+</div>

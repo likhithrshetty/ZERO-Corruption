@@ -1,0 +1,67 @@
+<div class="col-lg-8 offset-2">
+    <div class="card bg-success mt-5 ">
+        <div class="card-header">
+            <h4 class="text-white text-center">Department details</h4>
+        </div>
+       </div>
+    <table class="table table-striped table-hover bg-white shadow mt-3 text-black text-center">
+       <thead>
+        <tr>
+            <th>CId</th>
+            <th>Department Name</th>
+            <th>Date</th>
+            <th>View Corruption</th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr *ngFor="let lst of slst">
+            <td>{{lst.cid}}</td>
+            <td>{{lst.department.dname}}</td>
+            <td>{{lst.date}}</td>
+            <td><a class="btn btn-primary" (click)="view(lst)">View</a></td>
+        </tr>
+       </tbody>
+    </table>
+</div>
+
+<div *ngIf="isFlag">
+<div class="col-lg-8 offset-2">
+   <div class="card">
+    <h3 class="text-center">Corruption Details:</h3>
+    <div class="container">
+        <table class="table table-striped table-hover bg-white shadow mt-3 text-black text-center">
+            <thead>
+                <tr>
+                    <th>CID</th>
+                    <th>DeptName</th>
+                    <th>Public Name</th>
+                    <th>Corrution Data(Text)</th>
+                    <th>Corruption Data(Files)</th>
+                    <th>Date</th>
+                    <th>update</th>
+                </tr>
+            </thead>
+         <tbody>
+            <tr *ngFor="let lst of alst">
+                <td>{{lst.cid}}</td>
+                <td>{{lst.department.dname}}</td>
+                <td>{{lst.user.pname}}</td>
+                <td>{{lst.description}}</td>
+                <td>
+                  <a href={{lst.file}} class="btn btn-primary" download>Download</a> 
+                </td>
+                <td>{{lst.date}}</td>
+                <td>
+                  <a class="btn btn-success"  (click)="update(lst.cid)">Update</a>
+                </td>  
+          </tr>
+         </tbody>
+    
+        </table>
+    </div>
+   </div>
+</div>
+</div>
+
+
+

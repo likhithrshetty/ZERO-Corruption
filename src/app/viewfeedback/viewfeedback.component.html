@@ -1,0 +1,28 @@
+
+<div class="col-md-8 mt-5 offset-2">
+    <div class="card">
+        <div class="card-header bg-success text-white text-center">
+            <h4>View Feedbacks</h4>
+        </div>
+       </div>
+    <table class="table table-striped bg-white shadow mt-3 text-black text-center">
+      <thead>
+        <tr>
+           
+            <th>Public Name</th>
+            <th>Feedback</th>
+            <th>Date</th>
+           
+        </tr>
+      </thead>
+        <tbody>
+            <tr *ngFor="let lst of slst">
+          
+                <td>{{lst.users.pname}}</td>
+                <td>{{lst.feedback}}</td>
+                <td>{{lst.date}}</td>
+                
+            </tr>
+        </tbody>
+    </table>
+</div>

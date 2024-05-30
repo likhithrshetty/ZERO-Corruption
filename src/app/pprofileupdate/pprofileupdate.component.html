@@ -1,0 +1,48 @@
+<br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-2">
+            <div class="card">
+                <h4 class="py-2 text-center">Update Public Details</h4>
+                <form class="emp-form" #cropForm="ngForm">
+                    <div class="card-body">
+                        <div class="">
+                            <div class="form-group py-2">
+                                <label>Update Public Name:</label>
+                                <input name="pname" class="form-control" [(ngModel)]="model.pname"
+                                 >
+                            </div>
+                            <div class="form-group py-2">
+                                <label>Update Email:</label>
+                                <input name="email" class="form-control" [(ngModel)]="model.email"
+                                 >
+                            </div>
+                          
+                            <div class="form-group py-2">
+                                <label>Update Public Phone Number:</label>
+                                <input name="phone" class="form-control" [(ngModel)]="model.phone"
+                                   >
+                            </div>
+                           
+                            <div class="form-group py-2">
+                                <label>Update Public Address:</label>
+                                <input name="address" class="form-control" [(ngModel)]="model.address"
+                                    >
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="panel-row">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary float-end me-2 mb-2"
+                                    (click)="OnSubmit()">Update</button>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+<div class="img1">
+<div class="container">
+    <div class="row">
+       
+        <div class="col-lg-6 offset-7 mt-5"><br><br>
+            <div class="">
+                <div class="mt-2">
+                    <h3 class="text-center text-white">Login Form</h3>
+                </div>
+                <form>
+                    <div class="card-body">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="text-white">Select Usertype</label>
+                                <select [(ngModel)]="current" class="form-select text-center" name="Usertype">
+                                    <option *ngFor="let item of ulist" [value]="item.Userid" class="form-control">
+                                        {{item.name}}</option>
+                                </select>
+                            </div>
+                            <div *ngIf="isUserType" class="err">
+                                Select User Type
+                            </div>
+                            <div class="form-group py-2">
+                                <label class="text-white">Enter UserId</label>
+                                <input type="text" class="form-control" name="username" [(ngModel)]="model.id" />
+                            </div>
+                            <div *ngIf="isvalidUserId" class="err">
+                                Enter UserId
+                            </div>
+                            <div class="form-group py-2">
+                                <label class="text-white">Enter Password</label>
+                                <input type="password" class="form-control" name="Password"
+                                    [(ngModel)]="model.password" />
+                            </div>
+                            <div *ngIf="isvalidPassword" class="err">
+                                Enter Password
+                            </div>
+                        </div>
+                    </div>
+                    <div class="py-2">
+                        <div class="form-row me-3 ms-3">
+                            
+                            <div class="form-group ">
+                                <a href="register" class="text-white">New User ? Register</a>
+                                <button type="submit" class="btn btn-primary float-end" (click)="onSubmit()">
+                                    Submit
+                                </button>
+                                <button type="submit" class="btn btn-danger float-end me-3" (click)="back()">
+                                    Back
+                                </button>
+
+                            </div>
+                        </div>
+                        <br>
+                       
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
